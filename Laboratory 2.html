@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>My Diary</title>
+
+    <style>
+      body {
+        background-color: #ffe6f2;
+        font-family: "Times New Roman", Times, serif;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+      }
+
+      .container {
+        background: linear-gradient(#ffffff, #fff0f5);
+        padding: 30px;
+        border-radius: 20px;
+        width: 360px;
+        box-shadow: 0 10px 25px rgba(214, 51, 108, 0.3);
+        border: 2px solid #ffb3cc;
+      }
+
+      .title {
+        text-align: center;
+        color: #d6336c;
+        margin-bottom: 25px;
+        font-size: 28px;
+      }
+
+      label {
+        color: #b30059;
+        font-weight: bold;
+        display: block;
+        margin-bottom: 5px;
+      }
+
+      input, textarea {
+        width: 100%;
+        padding: 10px;
+        margin-bottom: 18px;
+        border-radius: 12px;
+        border: 1px solid #ff99bb;
+        font-family: "Times New Roman", Times, serif;
+        font-size: 14px;
+      }
+
+      textarea {
+        height: 90px;
+        resize: none;
+      }
+
+      button {
+        width: 100%;
+        padding: 12px;
+        background: linear-gradient(to right, #ff4d88, #ff85a2);
+        color: white;
+        border: none;
+        border-radius: 20px;
+        font-size: 16px;
+        cursor: pointer;
+        font-family: "Times New Roman", Times, serif;
+      }
+
+      button:hover {
+        background: linear-gradient(to right, #e6005c, #ff4d88);
+      }
+    </style>
+  </head>
+
+  <body>
+    <div class="container">
+      <h1 class="title">My Diary</h1>
+
+      <label for="date">Date</label>
+      <input id="date" type="date">
+
+      <label for="feeling">How are you feeling?</label>
+      <input id="feeling" type="text" placeholder="Happy, sad, excited...">
+
+      <label for="entry">Entry</label>
+      <textarea id="entry" placeholder="Write your thoughts here..."></textarea>
+
+      <button>Submit</button>
+    </div>
+  </body>
+</html>

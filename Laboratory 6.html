@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Inventory System</title>
+
+<style>
+body {
+    font-family: Arial;
+    padding: 20px;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+th, td {
+    border: 1px solid gray;
+    padding: 10px;
+    text-align: center;
+}
+
+th {
+    background: #333;
+    color: white;
+}
+
+input {
+    padding: 8px;
+    margin: 5px;
+}
+
+button {
+    padding: 8px 15px;
+}
+</style>
+</head>
+
+<body>
+
+<h2>Inventory Management System</h2>
+
+<form id="productForm">
+    <input type="text" id="name" placeholder="Product Name" required>
+    <input type="number" id="price" placeholder="Price" required>
+    <input type="number" id="stock" placeholder="Stock Quantity" required>
+    <button type="submit">Add Product</button>
+</form>
+
+<br>
+
+<table>
+<thead>
+<tr>
+    <th>ID</th>
+    <th>Item Name</th>
+    <th>Price</th>
+    <th>Stock</th>
+    <th>Actions</th>
+</tr>
+</thead>
+
+<tbody id="table-body"></tbody>
+</table>
+
+<script>
+const tbody = document.getElementById("table-body");
+
+let inventory = [
+    { id: 1, name: "Wireless Mouse", price: 25, stock: 10 },
+    { id: 2, name: "Keyboard", price: 45, stock: 0 },
+    { id: 3, name: "Galax Monitor", price: 50000, stock: 20 },
+    { id: 4, name: "RTX 9090", price: 1000000, stock: 1 },
+    { id: 5, name: "Gaming Speakers", price: 12345, stock: 123 }
+];
+
+function renderTable() {
+    tbody.innerHTML = "";
+
+    inventory.forEach(function(product, index) {
+        let stockText = product.stock == 0 ? "Out of Stock" : product.stock;
+
+        tbody.innerHTML += `
+        <tr>
+            <td>${product.id}</td>
+            <td>${product.name}</td>
+            <td>$${product.price}</td>
+            <td>${stockText}</td>
+            <td><button onclick="deleteProduct(${index})">Delete</button></td>
+        </tr>
+        `;
+    });
+}
+
+function deleteProduct(index) {
+    inventory.splice(index, 1);
+    renderTable();
+}
+
+renderTable();
+
+document.getElementById("productForm").addEventListener("submit", function(e) {
+    e.preventDefault();
+
+    let name = document.getElementById("name").value;
+    let price = Number(document.getElementById("price").value);
+    let stock = Number(document.getElementById("stock").value);
+
+    let newProduct = {
+        id: Date.now(), // safer unique ID
+        name: name,
+        price: price,
+        stock: stock
+    };
+
+    inventory.push(newProduct);
+    renderTable();
+    this.reset();
+});
+</script>
+
+</body>
+</html>

@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Calculator</title>
+
+    <style>
+      body {
+        background-color: #ffe6f2;
+        font-family: "Times New Roman", Times, serif;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+      }
+
+      .container {
+        background: linear-gradient(#ffffff, #fff0f5);
+        padding: 30px;
+        border-radius: 20px;
+        width: 300px;
+        box-shadow: 0 10px 25px rgba(214, 51, 108, 0.3);
+        border: 2px solid #ffb3cc;
+      }
+
+      .title {
+        text-align: center;
+        color: #d6336c;
+        margin-bottom: 20px;
+        font-size: 26px;
+      }
+
+      input {
+        width: 100%;
+        padding: 12px;
+        margin-bottom: 15px;
+        border-radius: 12px;
+        border: 1px solid #ff99bb;
+        font-size: 18px;
+        text-align: right;
+        font-family: "Times New Roman", Times, serif;
+      }
+
+      .buttons {
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        gap: 10px;
+      }
+
+      button {
+        padding: 12px;
+        font-size: 18px;
+        border-radius: 12px;
+        border: none;
+        background: linear-gradient(to right, #ff4d88, #ff85a2);
+        color: white;
+        cursor: pointer;
+        font-family: "Times New Roman", Times, serif;
+      }
+
+      button:hover {
+        background: linear-gradient(to right, #e6005c, #ff4d88);
+      }
+      
+      .zero {
+        grid-column: span 2;
+      }
+      
+      .c {
+        grid-column: span 2;
+      }
+      
+      .equal {
+        grid-column: span 2;
+      }
+    </style>
+  </head>
+
+  <body>
+    <div class="container">
+      <h1 class="title">Calculator</h1>
+
+     
+      <input type="text"  readonly>
+
+      <div class="buttons">
+        <button>7</button>
+        <button>8</button>
+        <button>9</button>
+        <button>÷</button>
+
+        <button>4</button>
+        <button>5</button>
+        <button>6</button>
+        <button>x</button>
+
+        <button>1</button>
+        <button>2</button>
+        <button>3</button>
+        <button>-</button>
+
+        <button class = "zero">0</button>
+        <button>.</button>
+        <button>*</button>
+        <button class = "c">C</button></button>
+        <button class = "equal">=</button>
+        
+      </div>
+    </div>
+  </body>
+</html>
